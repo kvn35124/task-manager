@@ -10,7 +10,6 @@ class App extends React.Component<IAppProps, IAppState> {
 				<Switch>
 					<Route exact path ="" />
 					<Route exact path=""/>
-					<Route exact path=""/>
 				</Switch>
 			</Router>
 		);

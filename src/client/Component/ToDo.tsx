@@ -12,14 +12,25 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
 
     render() {
         return (
-            <h1>This is the to do component</h1>
+            <div className="col-4">
+                <div className="card shadow">
+                    <div className="card-header">
+                        To Do
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                    </ul>
+                </div>
+            </div>
         )
     }
 }
 
 
-interface IToDoProps {};
-interface IToDoState {};
+interface IToDoProps { };
+interface IToDoState { };
 
 
 export default ToDo;

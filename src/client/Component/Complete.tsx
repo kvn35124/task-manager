@@ -12,7 +12,20 @@ class Complete extends React.Component<ICompleteProps, ICompleteState>{
 
     render() {
         return (
-            <h1>This is the complete page</h1>
+            <div className="col-4">
+                <div className="card shadow">
+                    <div className="card-header">
+                        Completed
+                </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                        <li className="list-group-item">To Do Test</li>
+                    </ul>
+                </div>
+            </div>
         )
     }
 }

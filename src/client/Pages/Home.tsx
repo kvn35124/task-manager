@@ -1,4 +1,7 @@
 import * as React from 'react';
+import ToDo from '../Component/ToDo';
+import InProgress from '../Component/InProgress';
+import Complete from '../Component/Complete';
 
 class Home extends React.Component<IHomeProps, IHomeState>{
     constructor(props: IHomeProps) {
@@ -12,7 +15,11 @@ class Home extends React.Component<IHomeProps, IHomeState>{
 
     render() {
         return (
-            <h1>This is the Home page</h1>
+            <div className="row">
+                <ToDo />
+                <InProgress />
+                <Complete />
+            </div>
         )
     }
 }

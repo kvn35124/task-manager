@@ -12,7 +12,20 @@ class Login extends React.Component<ILoginProps, ILoginState>{
 
     render() {
         return (
-            <h1>This is the Login page</h1>
+            <div className="row">
+                <div className="col-4">
+                    <div className="card shadow">
+                        <div className="card-header">
+                            To Do
+                        </div>
+                        <ul className="list-group list-group-flush">
+                            <li className="list-group-item">Test</li>
+                            <li className="list-group-item">Test</li>
+                            <li className="list-group-item">Test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

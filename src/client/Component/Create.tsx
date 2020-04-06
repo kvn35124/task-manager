@@ -1,10 +1,11 @@
 import * as React from 'react';
+import Calendar from 'react-calendar'
 
 class Create extends React.Component<ICreateProps, ICreateState>{
     constructor(props: ICreateProps) {
         super(props);
         this.state = {
-
+            startDate: new Date()
         }
     }
 
@@ -20,6 +21,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
                     </div>
                     <div className="form-group col-4 m-2">
                         <label>Pick a Due Date</label>
+                        <Calendar />
                     </div>
                     <div className="form-group m-2">
                         <label>Description</label>

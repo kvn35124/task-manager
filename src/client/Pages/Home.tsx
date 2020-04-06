@@ -2,6 +2,7 @@ import * as React from 'react';
 import ToDo from '../Component/ToDo';
 import InProgress from '../Component/InProgress';
 import Complete from '../Component/Complete';
+import Create from '../Component/Create';
 
 class Home extends React.Component<IHomeProps, IHomeState>{
     constructor(props: IHomeProps) {
@@ -19,6 +20,7 @@ class Home extends React.Component<IHomeProps, IHomeState>{
                 <ToDo />
                 <InProgress />
                 <Complete />
+                <Create />
             </div>
         )
     }

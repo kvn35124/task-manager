@@ -13,17 +13,15 @@ class Login extends React.Component<ILoginProps, ILoginState>{
     render() {
         return (
             <div className="row">
-                <div className="col-4">
-                    <div className="card shadow">
-                        <div className="card-header">
-                            To Do
-                        </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Test</li>
-                            <li className="list-group-item">Test</li>
-                            <li className="list-group-item">Test</li>
-                        </ul>
-                    </div>
+                <div className="col">
+                    <h2 className="text-center">Please Login</h2>
+                    <form className="form-group border border-dark rounded p-2">
+                        <label>Username:</label>
+                        <input type="text" placeholder="Required" className="form-control"/>
+                        <label>Password:</label>
+                        <input type="text" placeholder="Required" className="form-control"/>
+                        <button className="btn btn-dark mt-2">Login</button>
+                    </form>
                 </div>
             </div>
         )

@@ -3,7 +3,7 @@ import db from '../db';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/api/tasks', async (req, res) => {
     try {
         let results = await db.tasks.getAll();
         res.json(results);
@@ -13,15 +13,17 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.post('/api/tasks', async (req, res) => {
     try {
-        let results = await db.tasks.getOne(req.params.id);
-        res.json(results);
+        let results = await db.tasks.create(req.body.user_Id, req.body.task_Name, req.body.task_Description, req.body.due_Date);
+        console.log(results);
+        res.json("event saved");
     } catch (error) {
         console.log(error);
-        res.status(500).json('Broken code on task get one');
+        res.status(500).json('Broken code on task post');
     }
 })
+
 
 
 export default router;

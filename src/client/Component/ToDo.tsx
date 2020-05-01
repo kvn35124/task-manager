@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { timingSafeEqual } from 'crypto';
-import { json } from 'express';
+import { json } from '../../server/utilities/api';
+
+
 
 class ToDo extends React.Component<IToDoProps, IToDoState>{
     constructor(props: IToDoProps) {
@@ -13,7 +14,7 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
 
     async componentDidMount() {
         try {
-            let tasks = await json('/api/tasks');
+            let tasks = await json("/api/tasks");
             this.setState({ tasks });
         } catch (error) {
             console.log(error);
@@ -31,11 +32,8 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
                     </div>
                     <ul className="list-group list-group-flush">
                     {this.state.tasks.map(task => (
-                        <li>{task.task_name}</li>
+                        <li className="list-group-item">{task.task_name}</li>
                     ))}
-                        <li className="list-group-item">To Do Test</li>
-                        <li className="list-group-item">To Do Test</li>
-                        <li className="list-group-item">To Do Test</li>
                     </ul>
                 </div>
             </div>

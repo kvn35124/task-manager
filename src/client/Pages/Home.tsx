@@ -17,11 +17,11 @@ class Home extends React.Component<IHomeProps, IHomeState>{
     render() {
         return (
             <div className="row">
-                <h2>Manage Your Tasks</h2>
+                <h2 className="col-12 text-center">Manage Your Tasks</h2>
                 <ToDo />
                 <InProgress />
                 <Complete />
-                <h2>Create a New Task</h2>
+                <h2 className="col-12 text-center mt-3">Create a New Task</h2>
                 <Create />
             </div>
         )

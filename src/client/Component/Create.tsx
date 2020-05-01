@@ -13,7 +13,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
 
     render() {
         return (
-            <form className="border border-dark rounded mt-3">
+            <form className="border border-dark rounded mt-1">
                 <div className="form-row">
                     <div className="form-group col-6 m-2">
                         <label>Task Name:</label>

@@ -1,12 +1,11 @@
 import * as React from 'react';
-import Calendar from 'react-calendar'
 import { json } from '../../server/utilities/api';
 
 class Create extends React.Component<ICreateProps, ICreateState>{
     constructor(props: ICreateProps) {
         super(props);
         this.state = {
-            startDate: new Date(),
+            date: new Date(),
             user_id: 1,
             task_name: '',
             task_description: '',
@@ -20,17 +19,15 @@ class Create extends React.Component<ICreateProps, ICreateState>{
             user_id: this.state.user_id,
             task_name: this.state.task_name,
             task_description: this.state.task_description,
-            due_date: this.state.startDate
+            due_date: this.state.date
         }
         try {
             let results = await json('/api/tasks', 'POST', newTask);
-            console.log(results);
         } catch (error) {
             console.log(error);
         }
     }
 
-    onChange = (date: Date) => this.setState({startDate : date})
 
 
     render() {
@@ -43,7 +40,6 @@ class Create extends React.Component<ICreateProps, ICreateState>{
                     </div>
                     <div className="form-group col-4 m-2">
                         <label>Pick a Due Date:</label>
-                        <Calendar onChange={this.onChange} value={this.state.startDate}/>
                     </div>
                     <div className="form-group m-2">
                         <label>Description:</label>
@@ -59,7 +55,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
 
 interface ICreateProps { };
 interface ICreateState { 
-    startDate: Date;
+    date: Date;
     user_id: number;
     task_name: string;
     task_description: string;

@@ -1,6 +1,7 @@
 import * as mysql from 'mysql';
 import config from '../config';
 import tasks from './tables/Tasks';
+import users from './tables/Users'
 
 
 export const Connection = mysql.createPool(config.mysql);
@@ -16,5 +17,6 @@ export const Query = (query: string, values?: any) => {
 }
 
 export default {
-    tasks
+    tasks,
+    users
 }

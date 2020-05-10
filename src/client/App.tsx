@@ -4,6 +4,8 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Navbar from './Component/Navbar';
 import Register from './Pages/Register';
+import Description from './Pages/Description';
+import Edit from './Pages/Edit';
 
 class App extends React.Component<IAppProps, IAppState> {
 
@@ -16,6 +18,8 @@ class App extends React.Component<IAppProps, IAppState> {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/register" component={Register} />
+						<Route exact path ="/tasks/:id" component={Description} />
+						<Route exact path="/edit/:id" component={Edit} />
 					</Switch>
 				</main>
 			</Router>

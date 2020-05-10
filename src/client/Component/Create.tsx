@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { json } from '../../server/utilities/api';
+import Calendar from 'react-calendar';
 
 class Create extends React.Component<ICreateProps, ICreateState>{
     constructor(props: ICreateProps) {
@@ -28,6 +29,8 @@ class Create extends React.Component<ICreateProps, ICreateState>{
         }
     }
 
+    onChange = date => this.setState({ date });
+
 
 
     render() {
@@ -40,6 +43,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
                     </div>
                     <div className="form-group col-4 m-2">
                         <label>Pick a Due Date:</label>
+                        <Calendar value={this.state.date} onChange={this.onChange} />
                     </div>
                     <div className="form-group m-2">
                         <label>Description:</label>

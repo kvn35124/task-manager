@@ -32,7 +32,7 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
                     </div>
                     <ul className="list-group list-group-flush">
                     {this.state.tasks.map(task => (
-                        <li className="list-group-item">{task.task_name}</li>
+                        <li className="list-group-item" draggable="true"><a>{task.task_name}</a></li>
                     ))}
                     </ul>
                 </div>

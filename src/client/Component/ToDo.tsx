@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { json } from '../../server/utilities/api';
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,15 +26,15 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
 
     render() {
         return (
-            <div className="col-4">
+            <div className="col-md-4">
                 <div className="card shadow">
                     <div className="card-header">
                         To Do
                     </div>
                     <ul className="list-group list-group-flush">
-                    {this.state.tasks.map(task => (
-                        <li className="list-group-item" draggable="true"><a>{task.task_name}</a></li>
-                    ))}
+                        {this.state.tasks.map(task => (
+                            <Link to={``} ><li className="list-group-item" draggable="true">{task.task_name}</li></Link>
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -52,7 +53,7 @@ export interface ITasks {
 
 
 interface IToDoProps { };
-interface IToDoState { 
+interface IToDoState {
     tasks: Array<ITasks>;
 };
 

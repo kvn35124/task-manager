@@ -12,7 +12,7 @@ class Complete extends React.Component<ICompleteProps, ICompleteState>{
 
     render() {
         return (
-            <div className="col-4">
+            <div className="col-md-4">
                 <div className="card shadow">
                     <div className="card-header">
                         Completed
@@ -31,8 +31,8 @@ class Complete extends React.Component<ICompleteProps, ICompleteState>{
 }
 
 
-interface ICompleteProps {};
-interface ICompleteState {};
+interface ICompleteProps { };
+interface ICompleteState { };
 
 
 export default Complete;

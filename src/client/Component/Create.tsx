@@ -37,7 +37,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
         return (
             <form className="border border-dark rounded mt-1">
                 <div className="form-row">
-                    <div className="form-group col-6 m-2">
+                    <div className="form-group col-md-10 m-2">
                         <label>Task Name:</label>
                         <input type="text" value={this.state.task_name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({task_name: e.target.value})} className="form-control" placeholder="What is the name of the task..." />
                     </div>

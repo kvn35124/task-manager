@@ -12,7 +12,7 @@ class InProgress extends React.Component<IInProgressProps, IInProgressState>{
 
     render() {
         return (
-            <div className="col-4">
+            <div className="col-md-4">
                 <div className="card shadow">
                     <div className="card-header">
                         In Progress
@@ -31,8 +31,8 @@ class InProgress extends React.Component<IInProgressProps, IInProgressState>{
 }
 
 
-interface IInProgressProps {};
-interface IInProgressState {};
+interface IInProgressProps { };
+interface IInProgressState { };
 
 
 export default InProgress;

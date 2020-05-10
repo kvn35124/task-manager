@@ -16,11 +16,13 @@ class Home extends React.Component<IHomeProps, IHomeState>{
 
     render() {
         return (
-            <div className="row">
+            <div className="row justify-content-center">
                 <h2 className="col-12 text-center">Manage Your Tasks</h2>
-                <ToDo />
-                <InProgress />
-                <Complete />
+                <div className="row justify-content-center">
+                    <ToDo />
+                    <InProgress />
+                    <Complete />
+                </div>
                 <h2 className="col-12 text-center mt-3">Create a New Task</h2>
                 <Create />
             </div>
@@ -29,8 +31,8 @@ class Home extends React.Component<IHomeProps, IHomeState>{
 }
 
 
-interface IHomeProps {};
-interface IHomeState {};
+interface IHomeProps { };
+interface IHomeState { };
 
 
 export default Home;

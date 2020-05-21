@@ -6,7 +6,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
     constructor(props: ICreateProps) {
         super(props);
         this.state = {
-            date: new Date(),
+            date: new Date,
             user_id: 1,
             task_name: '',
             task_description: '',
@@ -29,7 +29,10 @@ class Create extends React.Component<ICreateProps, ICreateState>{
         }
     }
 
-    onChange = date => this.setState({ date });
+    onChange = date => {
+        this.setState({ date });
+        console.log(this.state.date);
+    }
 
 
 

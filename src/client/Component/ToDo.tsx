@@ -33,7 +33,8 @@ class ToDo extends React.Component<IToDoProps, IToDoState>{
                     </div>
                     <ul className="list-group list-group-flush">
                         {this.state.tasks.map(task => (
-                            <Link to={``} ><li className="list-group-item" draggable="true">{task.task_name}</li></Link>
+                            <Link to={`/tasks/${task.id}`} ><li className="list-group-item" draggable="true">{task.task_name} <hr/></li></Link>
+                            
                         ))}
                     </ul>
                 </div>

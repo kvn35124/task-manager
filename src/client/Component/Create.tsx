@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { json } from '../../server/utilities/api';
 import Calendar from 'react-calendar';
+import { RouteComponentProps } from 'react-router-dom';
 
 class Create extends React.Component<ICreateProps, ICreateState>{
     constructor(props: ICreateProps) {
@@ -24,6 +25,10 @@ class Create extends React.Component<ICreateProps, ICreateState>{
         }
         try {
             let results = await json('/api/tasks', 'POST', newTask);
+            if (results = "event saved") {
+                console.log(results)
+                console.log(this.props.history.push('/'));
+            } 
         } catch (error) {
             console.log(error);
         }
@@ -60,7 +65,7 @@ class Create extends React.Component<ICreateProps, ICreateState>{
 }
 
 
-interface ICreateProps { };
+interface ICreateProps extends RouteComponentProps {};
 interface ICreateState { 
     date: Date;
     user_id: number;

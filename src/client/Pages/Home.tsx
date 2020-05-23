@@ -3,6 +3,7 @@ import ToDo from '../Component/ToDo';
 import InProgress from '../Component/InProgress';
 import Complete from '../Component/Complete';
 import Create from '../Component/Create';
+import { RouteComponentProps } from 'react-router-dom';
 
 class Home extends React.Component<IHomeProps, IHomeState>{
     constructor(props: IHomeProps) {
@@ -31,7 +32,7 @@ class Home extends React.Component<IHomeProps, IHomeState>{
 }
 
 
-interface IHomeProps { };
+interface IHomeProps extends RouteComponentProps { };
 interface IHomeState { };
 
 

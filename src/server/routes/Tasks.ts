@@ -47,6 +47,18 @@ router.delete('/api/tasks/:id', async (req, res) => {
 })
 
 
+router.put('/api/tasks/:id', async (req, res) => {
+    try {
+        const dataToInsert = req.body;
+        dataToInsert.due_date = new Date(dataToInsert.due_date);
+        let results = await db.tasks.update(req.params.id, req.body.task_Name, req.body.task_Description, dataToInsert.due_date);
+        res.json(results);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json('Broken Code');
+    }
+})
+
 
 
 

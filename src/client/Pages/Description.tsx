@@ -6,6 +6,7 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
     constructor(props: IDescriptionProps) {
         super(props);
         this.state = {
+            id: 0,
             title: '',
             date: new Date,
             description: ''
@@ -16,8 +17,8 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
     async componentDidMount() {
         try {
             let [task]: any = await json(`/api/tasks/${this.props.match.params.id}`)
-            console.log(task);
             this.setState({
+                id: task.id,
                 title: task.task_name,
                 date: task.due_date,
                 description: task.task_description
@@ -53,7 +54,7 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
                             {/* <p className="due_date">{this.state.date}</p> */}
                             <p className="description">{this.state.description}</p>
                             <div className="d-flex justify-content-around"> 
-                                <Link to={`/edit/:id`} className="btn btn-primary">Edit</Link>
+                                <Link to={`/edit/${this.state.id}`} className="btn btn-primary">Edit</Link>
                                 <Link to={'/'} className="btn btn-success">Back to Events</Link>
                                 <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleDelete()} className="btn btn-danger">Delete</button>
                                 
@@ -71,6 +72,7 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
 interface IDescriptionProps extends RouteComponentProps<{ id: string }> { };
 interface IDescriptionState {
     title: string;
+    id: number;
     date: Date;
     description: string;
 };

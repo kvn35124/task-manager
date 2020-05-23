@@ -36,6 +36,16 @@ router.get('/api/tasks/:id', async (req, res) => {
     }
 })
 
+router.delete('/api/tasks/:id', async (req, res) => {
+    try {
+        let results = await db.tasks.deleteOne(req.params.id);
+        res.json(results)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('Broken Code')
+    }
+})
+
 
 
 

@@ -28,6 +28,20 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
     }
 
 
+    async handleDelete() {
+        event.preventDefault()
+        try {
+            let results = await json(`/api/tasks/${this.props.match.params.id}`, 'DELETE');
+            console.log(results)
+            if (results) {
+                this.props.history.push('/');
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
 
     render() {
         return (
@@ -41,7 +55,7 @@ class Description extends React.Component<IDescriptionProps, IDescriptionState>{
                             <div className="d-flex justify-content-around"> 
                                 <Link to={`/edit/:id`} className="btn btn-primary">Edit</Link>
                                 <Link to={'/'} className="btn btn-success">Back to Events</Link>
-                                <button className="btn btn-danger">Delete</button>
+                                <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleDelete()} className="btn btn-danger">Delete</button>
                                 
                             </div>
 

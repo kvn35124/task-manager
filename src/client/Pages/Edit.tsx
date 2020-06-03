@@ -38,7 +38,7 @@ class Edit extends React.Component<IEditProps, IEditState>{
             task_name: this.state.task_name,
             due_date: this.state.due_date,
             task_description: this.state.task_description
-        }
+        };
         try {
             let results = await json(`/api/tasks/${this.props.match.params.id}`, 'PUT', updatedTask);
             if (results) {

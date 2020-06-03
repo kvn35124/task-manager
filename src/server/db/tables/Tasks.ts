@@ -4,7 +4,7 @@ const getAll = () => Query('Select * from tasks');
 
 const getOne = (id: any) => Query('Select * from tasks where id = ?', [id]);
 
-const update = (task_Name: string, task_Description: string, due_Date: Date, id: number) => Query('update tasks set task_name = ?, task_description = ?, due_date = ? where id = ?', [task_Name, task_Description, due_Date, id]);
+const update = (task_Name: string, task_Description: string, due_Date: Date, id: any) => Query('update tasks set task_name = ?, task_description = ?, due_date = ? where id = ?', [task_Name, task_Description, due_Date, id]);
 
 const deleteOne = (id: any) => Query('delete from tasks where id = ?', [id]);
 

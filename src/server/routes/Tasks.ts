@@ -51,7 +51,7 @@ router.put('/api/tasks/:id', async (req, res) => {
     try {
         const dataToInsert = req.body;
         dataToInsert.due_date = new Date(dataToInsert.due_date);
-        let results = await db.tasks.update(req.body.task_name, req.body.task_description, dataToInsert.due_date, req.body.id, );
+        let results = await db.tasks.update(req.body.task_name, req.body.task_description, dataToInsert.due_date, req.params.id );
         res.json(results);
     } catch (error) {
         console.log(error)
